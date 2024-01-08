@@ -22,4 +22,4 @@ okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.
 retrofit-core = "com.squareup.retrofit2:retrofit:2.9.0"
 retrofit-converter-kotlinxSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
 
-clikt = "com.github.ajalt.clikt:clikt:4.2.1"
+clikt = "com.github.ajalt.clikt:clikt:4.2.2"
