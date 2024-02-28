@@ -163,8 +163,11 @@ private class MainCommand : CliktCommand(
 					}
 					return "Bearer ${body.access_token}"
 				}
+
 				400 -> print("…")
+
 				410 -> break
+
 				else -> {
 					println()
 					throw HttpException(pollResponse)
