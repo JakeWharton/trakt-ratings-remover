@@ -25,6 +25,7 @@ import retrofit2.HttpException
 import retrofit2.Invocation
 import retrofit2.Retrofit
 import retrofit2.create
+import java.util.concurrent.TimeUnit
 
 fun main(vararg args: String) = MainCommand().main(args)
 
@@ -66,6 +67,9 @@ private class MainCommand : CliktCommand(
 				chain.proceed(requestBuilder.build())
 			}
 			.addNetworkInterceptor(HttpLoggingInterceptor(debug::log).setLevel(BASIC))
+			.connectTimeout(60, TimeUnit.SECONDS)
+			.writeTimeout(120, TimeUnit.SECONDS)
+			.readTimeout(60, TimeUnit.SECONDS)
 			.build()
 	}
 
