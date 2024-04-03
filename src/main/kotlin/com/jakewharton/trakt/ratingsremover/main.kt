@@ -67,8 +67,6 @@ private class MainCommand : CliktCommand(
 				chain.proceed(requestBuilder.build())
 			}
 			.addNetworkInterceptor(HttpLoggingInterceptor(debug::log).setLevel(BASIC))
-			.connectTimeout(60, TimeUnit.SECONDS)
-			.writeTimeout(120, TimeUnit.SECONDS)
 			.readTimeout(60, TimeUnit.SECONDS)
 			.build()
 	}
