@@ -28,10 +28,11 @@ import retrofit2.create
 
 fun main(vararg args: String) = MainCommand().main(args)
 
-private class MainCommand : CliktCommand(
-	name = "trakt-ratings-remover",
-	help = "Lists and optionally removes all ratings from Trakt",
-) {
+private class MainCommand :
+	CliktCommand(
+		name = "trakt-ratings-remover",
+		help = "Lists and optionally removes all ratings from Trakt",
+	) {
 	private val debug by option(hidden = true)
 		.switch<Debug>(mapOf("--debug" to Debug.Console))
 		.default(Debug.Disabled)
