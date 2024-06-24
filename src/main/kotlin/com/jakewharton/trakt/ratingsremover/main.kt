@@ -12,6 +12,7 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.options.switch
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
@@ -25,7 +26,6 @@ import retrofit2.HttpException
 import retrofit2.Invocation
 import retrofit2.Retrofit
 import retrofit2.create
-import java.util.concurrent.TimeUnit
 
 fun main(vararg args: String) = MainCommand().main(args)
 
