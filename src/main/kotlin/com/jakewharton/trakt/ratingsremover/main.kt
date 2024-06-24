@@ -12,6 +12,7 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.options.switch
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
@@ -67,6 +68,7 @@ private class MainCommand :
 				chain.proceed(requestBuilder.build())
 			}
 			.addNetworkInterceptor(HttpLoggingInterceptor(debug::log).setLevel(BASIC))
+			.readTimeout(60, TimeUnit.SECONDS)
 			.build()
 	}
 
