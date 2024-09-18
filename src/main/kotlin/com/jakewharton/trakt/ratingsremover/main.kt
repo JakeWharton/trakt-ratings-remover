@@ -3,6 +3,8 @@
 package com.jakewharton.trakt.ratingsremover
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.Context
+import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.help
 import com.github.ajalt.clikt.parameters.options.default
@@ -29,11 +31,10 @@ import retrofit2.create
 
 fun main(vararg args: String) = MainCommand().main(args)
 
-private class MainCommand :
-	CliktCommand(
-		name = "trakt-ratings-remover",
-		help = "Lists and optionally removes all ratings from Trakt",
-	) {
+private class MainCommand : CliktCommand("trakt-ratings-remover") {
+	override fun help(context: Context) =
+		"Lists and optionally removes all ratings from Trakt"
+
 	private val debug by option(hidden = true)
 		.switch<Debug>(mapOf("--debug" to Debug.Console))
 		.default(Debug.Disabled)
