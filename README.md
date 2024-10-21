@@ -2,6 +2,9 @@
 
 Script to remove all your ratings from Trakt.
 
+This repo is archived because it did its job, and I am not going to maintain it. Please feel free
+to fork and manipulate it to suit your needs, however.
+
 I joined Trakt when they only had thumbs up/down ratings. Eventually they migrated to a
 1 - 10 system, making a thumbs up valued at 10 and a thumbs down valued at 1. Thus, my account
 was filled with an overwhelming and inaccurate set of 1-rated and 10-rated content.
